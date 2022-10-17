@@ -21,11 +21,13 @@ public class CarDaoImpl implements CarDao {
     private SessionFactory sessionFactory;
 
     @Override
+    @Transactional
     public void add(Car car) {
         sessionFactory.getCurrentSession().save(car);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Car> getCars() {
         Query<Car> queryCars = sessionFactory.getCurrentSession().createQuery("select b from Car b", Car.class);
         return queryCars.list();

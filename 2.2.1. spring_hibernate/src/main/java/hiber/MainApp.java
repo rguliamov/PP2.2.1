@@ -41,6 +41,6 @@ public class MainApp {
 
       userService.listUsersByModelAndSeries("bmw", 1000).forEach(user -> System.out.println(user.getFirstName()));
 
-      context.close();
+     context.close();
    }
 }
