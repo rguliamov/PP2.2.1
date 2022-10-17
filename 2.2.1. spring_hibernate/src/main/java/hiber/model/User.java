@@ -19,7 +19,8 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   public User() {}
+   @Deprecated
+   protected User() {}
    
    public User(String firstName, String lastName, String email) {
       this.firstName = firstName;
